@@ -1,6 +1,3 @@
-export interface PayloadToken {
-}
-
 export interface UserSignUpData {
     name: string;
     email: string;
@@ -9,4 +6,9 @@ export interface UserSignUpData {
         number: string,
         ddd: string
     }>
+}
+
+export interface UserSignInData {
+    email: string;
+    password: string;
 }

@@ -1,14 +1,28 @@
 import assign from 'lodash/assign'
 import { verify, sign } from 'jsonwebtoken'
-import { publicKey, privateKey, signOptions } from './key'
+import { privateKey, signOptions } from './key'
 import { TOKEN_TIME } from './constants'
-import { PayloadToken } from '.'
 
+/**
+ *
+ * @param token
+ */
 const verifyJwt = ( token: string ) => {
-    return verify( token, publicKey )
+    try {
+        return verify(token, privateKey, {algorithms: [signOptions.algorithm]})
+    } catch(err) {
+        console.error(err.message)
+        return undefined
+    }
 }
 
-const signJwt = ( payload: PayloadToken, expiresIn: string = undefined ): string => {
+
+/**
+ *
+ * @param payload
+ * @param expiresIn
+ */
+const signJwt = ( payload, expiresIn: string = undefined ): string => {
     return sign(
         payload,
         privateKey,

@@ -1,6 +1,6 @@
 import express from 'express'
 import { json, urlencoded } from 'body-parser'
-import { signUpRoutes, signInRoutes } from './routes'
+import routes from './routes'
 import { mongoConnection } from './models'
 import { createServer } from 'http'
 
@@ -10,8 +10,7 @@ const app = express()
 
 app.use( json() )
 app.use( urlencoded( { extended: true } ) )
-app.use( signUpRoutes )
-app.use( signInRoutes )
+app.use( routes )
 
 const httpServer = createServer( app )
 
