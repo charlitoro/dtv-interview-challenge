@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "lib": [ "ES2015", "DOM" ],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "target": "ES2015",
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "watch": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": [
+    "node_modules/**/*",
+    "dist/**/*",
+    ".idea/**/*",
+    "webpack.config.js",
+    "**/*.test.ts"
+  ]
+}
