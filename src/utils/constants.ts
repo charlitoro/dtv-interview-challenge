@@ -2,7 +2,8 @@ import { config } from 'dotenv'
 import { join } from 'path'
 
 if( process.env.NODE_ENV === 'test' ){
-    config( { path: join( __dirname, `../../`, `.env.test` ) } )
+    // TODO: Config environments file to test
+    config( { path: join( __dirname, `../../`, `.env.off` ) } )
 } else  {
     config( { path: join( __dirname, `../../`, `.env.off` ) } )
 }

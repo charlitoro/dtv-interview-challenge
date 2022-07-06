@@ -5,7 +5,8 @@ const Dotenv = require('dotenv-webpack');
 const { DefinePlugin } = require( 'webpack' );
 
 const ENV_PATH = {
-    'offline': path.join( __dirname, '.env.off' )
+    'offline': path.join( __dirname, '.env.off' ),
+    'test': path.join( __dirname, '.env.off' )
 }
 
 module.exports = {
