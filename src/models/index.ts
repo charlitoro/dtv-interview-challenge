@@ -1,6 +1,6 @@
 import {connect, connection} from 'mongoose'
 import { MONGO_URL } from '../utils'
-import UserModels from './User'
+import User from './User'
 
 const mongoConnection: any = () => {
     return connect( MONGO_URL, {
@@ -14,7 +14,7 @@ const closeConnection: any = () => {
 }
 
 const models: any = {
-    ...UserModels
+    User
 }
 
 export { mongoConnection, closeConnection, models }

@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose'
+import {Schema, model, now} from 'mongoose'
 
 const phoneSchema: any = new Schema({
     number: { type: String },
@@ -9,11 +9,11 @@ const userSchema: any = new Schema( {
     name:{ type: String, required: true },
     email:{ type: String, required: true },
     password:{ type: String, required: true },
-    celular:{ type: String, required: true },
-    last_login:{type: Date},
-    phones:{type: [phoneSchema]}
-}, { collection: `User`, timestamps: true } )
+    last_login:{type: Date, default: now()},
+    phones:{type: [phoneSchema]},
+    token:{type: String}
+}, { collection: `User`, timestamps: { createdAt: "creation_date", updatedAt: "update_date" } } )
 
-const user = model( 'User', userSchema )
+const userModel = model( 'User', userSchema )
 
-export default user
+export default userModel
