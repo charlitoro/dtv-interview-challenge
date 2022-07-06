@@ -7,7 +7,7 @@
     "offline": "npm install && NODE_ENV=offline webpack --watch",
     "test": "NODE_ENV=test jest --detectOpenHandles --forceExit --testTimeout=5000"
   },
-  "author": "Charli Toro <carlosandres.toro@globant.com>",
+  "author": "Charli Toro <carlostoro04@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
